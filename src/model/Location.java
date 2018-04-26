@@ -31,6 +31,16 @@ public class Location implements Serializable {
 
 	public Location() {
 	}
+	
+	public Location(String idLocation, String latitude, String longitude, List<LocationHasUser> locationHasUsers,
+			List<Tutorship> tutorships) {
+		super();
+		this.idLocation = idLocation;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.locationHasUsers = locationHasUsers;
+		this.tutorships = tutorships;
+	}
 
 	public String getIdLocation() {
 		return this.idLocation;

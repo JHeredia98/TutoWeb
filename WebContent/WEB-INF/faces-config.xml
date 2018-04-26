@@ -5,8 +5,8 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
 	<managed-bean>
-		<managed-bean-name>tutorship</managed-bean-name>
-		<managed-bean-class>model.Tutorship</managed-bean-class>
+		<managed-bean-name>tutorshipController</managed-bean-name>
+		<managed-bean-class>controller.TutorshipController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 

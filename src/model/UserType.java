@@ -26,6 +26,13 @@ public class UserType implements Serializable {
 
 	public UserType() {
 	}
+	
+	public UserType(String idUser_Type, byte type, List<User> users) {
+		super();
+		this.idUser_Type = idUser_Type;
+		this.type = type;
+		this.users = users;
+	}
 
 	public String getIdUser_Type() {
 		return this.idUser_Type;

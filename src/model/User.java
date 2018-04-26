@@ -54,6 +54,26 @@ public class User implements Serializable {
 
 	public User() {
 	}
+	
+	public User(String idUser, String email, String lastName, String name, String password,
+			String userLiveLocationLatitude, String userLiveLocationLongitude, String username,
+			List<LocationHasUser> locationHasUsers, List<Tutorship> tutorships1, List<Tutorship> tutorships2,
+			Career career, UserType userType) {
+		super();
+		this.idUser = idUser;
+		this.email = email;
+		this.lastName = lastName;
+		this.name = name;
+		this.password = password;
+		this.userLiveLocationLatitude = userLiveLocationLatitude;
+		this.userLiveLocationLongitude = userLiveLocationLongitude;
+		this.username = username;
+		this.locationHasUsers = locationHasUsers;
+		this.tutorships1 = tutorships1;
+		this.tutorships2 = tutorships2;
+		this.career = career;
+		this.userType = userType;
+	}
 
 	public String getIdUser() {
 		return this.idUser;

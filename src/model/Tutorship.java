@@ -54,6 +54,23 @@ public class Tutorship implements Serializable {
 	private User user2;
 
 	public Tutorship() {
+		
+	}
+	
+	public Tutorship(String idTutorship, Date date, String motive, int rating, Date timeStamp, Cost cost,
+			Location location, Status status, User user1, Topic topic, User user2) {
+		super();
+		this.idTutorship = idTutorship;
+		this.date = date;
+		this.motive = motive;
+		this.rating = rating;
+		this.timeStamp = timeStamp;
+		this.cost = cost;
+		this.location = location;
+		this.status = status;
+		this.user1 = user1;
+		this.topic = topic;
+		this.user2 = user2;
 	}
 
 	public String getIdTutorship() {

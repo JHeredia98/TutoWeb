@@ -30,6 +30,14 @@ public class SubjectType implements Serializable {
 
 	public SubjectType() {
 	}
+	
+	public SubjectType(String idType, String name, List<Subject> subjects, Career career) {
+		super();
+		this.idType = idType;
+		this.name = name;
+		this.subjects = subjects;
+		this.career = career;
+	}
 
 	public String getIdType() {
 		return this.idType;

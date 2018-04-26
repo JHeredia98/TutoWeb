@@ -27,6 +27,13 @@ public class LocationHasUser implements Serializable {
 
 	public LocationHasUser() {
 	}
+	
+	public LocationHasUser(String idLocation_has_user, Location location, User user) {
+		super();
+		this.idLocation_has_user = idLocation_has_user;
+		this.location = location;
+		this.user = user;
+	}
 
 	public String getIdLocation_has_user() {
 		return this.idLocation_has_user;

@@ -31,6 +31,15 @@ public class Topic implements Serializable {
 
 	public Topic() {
 	}
+	
+	public Topic(String idTopic, String complexity, String name, Subject subject, List<Tutorship> tutorships) {
+		super();
+		this.idTopic = idTopic;
+		this.complexity = complexity;
+		this.name = name;
+		this.subject = subject;
+		this.tutorships = tutorships;
+	}
 
 	public String getIdTopic() {
 		return this.idTopic;

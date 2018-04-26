@@ -26,6 +26,13 @@ public class Cost implements Serializable {
 
 	public Cost() {
 	}
+	
+	public Cost(String idCost, BigDecimal cost, List<Tutorship> tutorships) {
+		super();
+		this.idCost = idCost;
+		this.cost = cost;
+		this.tutorships = tutorships;
+	}
 
 	public String getIdCost() {
 		return this.idCost;

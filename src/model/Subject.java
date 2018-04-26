@@ -30,6 +30,14 @@ public class Subject implements Serializable {
 
 	public Subject() {
 	}
+	
+	public Subject(String idSubject, String name, SubjectType subjectType, List<Topic> topics) {
+		super();
+		this.idSubject = idSubject;
+		this.name = name;
+		this.subjectType = subjectType;
+		this.topics = topics;
+	}
 
 	public String getIdSubject() {
 		return this.idSubject;

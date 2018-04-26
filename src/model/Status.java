@@ -25,6 +25,13 @@ public class Status implements Serializable {
 
 	public Status() {
 	}
+	
+	public Status(String idStatus, String description, List<Tutorship> tutorships) {
+		super();
+		this.idStatus = idStatus;
+		this.description = description;
+		this.tutorships = tutorships;
+	}
 
 	public String getIdStatus() {
 		return this.idStatus;

@@ -31,6 +31,15 @@ public class Career implements Serializable {
 
 	public Career() {
 	}
+	
+	public Career(String idCareer, String level, String name, List<SubjectType> subjectTypes, List<User> users) {
+		super();
+		this.idCareer = idCareer;
+		this.level = level;
+		this.name = name;
+		this.subjectTypes = subjectTypes;
+		this.users = users;
+	}
 
 	public String getIdCareer() {
 		return this.idCareer;
