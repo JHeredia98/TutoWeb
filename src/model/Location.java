@@ -22,16 +22,23 @@ public class Location implements Serializable {
 	private String longitude;
 
 	//bi-directional many-to-one association to LocationHasUser
-	@OneToMany(mappedBy="location")
+	@OneToMany(mappedBy="location", cascade= {CascadeType.PERSIST})
 	private List<LocationHasUser> locationHasUsers;
 
 	//bi-directional many-to-one association to Tutorship
-	@OneToMany(mappedBy="location")
+	@OneToMany(mappedBy="location", cascade= {CascadeType.PERSIST})
 	private List<Tutorship> tutorships;
 
 	public Location() {
 	}
 	
+	public Location(String idLocation, String latitude, String longitude) {
+		super();
+		this.idLocation = idLocation;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
 	public Location(String idLocation, String latitude, String longitude, List<LocationHasUser> locationHasUsers,
 			List<Tutorship> tutorships) {
 		super();

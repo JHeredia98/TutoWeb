@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDmYJjWeZWNRMuxVJB4JJpdrsOOeHGL7lY'></script>
+</h:head>
+<h:body>
+	<h:form>
+    <p:panel id="panel" header="Nueva Ubicación">
+ 
+        <p:messages id="msgs" />
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+        	<p:outputLabel for="id" value="id" />
+            <p:inputText id="id" value="#{locationController.location.idLocation}" required="true" label="id">
+                <f:validateLength minimum="9" />
+            </p:inputText>
+            <p:message for="latitud" display="icon" />
+            <p:outputLabel for="latitud" value="Latitud:" />
+            <p:inputText id="latitud" value="#{locationController.location.latitude}" required="true" label="Latitud">
+                <f:validateLength minimum="9" />
+            </p:inputText>
+            <p:message for="latitud" display="icon" />
+ 
+            <p:outputLabel for="longitud" value="Longitud:" />
+            <p:inputText id="longitud" value="#{locationController.location.longitude}" label="longitud" required="true">
+                <f:validateLength minimum="9" />
+            </p:inputText>
+            <p:message for="longitud" display="icon" />
+ 
+        </h:panelGrid>
+ 
+        <p:commandButton value="Save" update="panel" actionListener="#{locationController.crearLocation()}" icon="ui-icon-check" />
+    </p:panel>
+</h:form>
+<h:form>
+    <p:panel id="panel" header="Nueva Ubicación">
+ 
+        <p:messages id="msgs" />
+ 		<p:outputLabel for="ubicacion" value="Ubicacion: " />
+        <p:selectOneMenu id="ubicacion" value="Ubicacion" editable="true">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItems value="#{locationController.locations}" var="sub" itemLabel="#{sub.longitude} , #{sub.latitude}" />
+        </p:selectOneMenu>
+        <h:panelGrid columns="3" cellpadding="5">
+        	<p:outputLabel for="id" value="id a cambiar" />
+            <p:inputText id="id" value="#{locationController.location.idLocation}" required="true" label="id">
+                <f:validateLength minimum="9" />
+            </p:inputText>
+            <p:message for="latitud" display="icon" />
+            <p:outputLabel for="latitud" value="Latitud:" />
+            <p:inputText id="latitud" value="#{locationController.location.latitude}" required="true" label="Latitud">
+                <f:validateLength minimum="9" />
+            </p:inputText>
+            <p:message for="latitud" display="icon" />
+ 
+            <p:outputLabel for="longitud" value="Longitud:" />
+            <p:inputText id="longitud" value="#{locationController.location.longitude}" label="longitud" required="true">
+                <f:validateLength minimum="9" />
+            </p:inputText>
+            <p:message for="longitud" display="icon" />
+ 
+        </h:panelGrid>
+ 		
+        <p:commandButton value="Save" update="panel" actionListener="#{locationController.modificarLocation()}" icon="ui-icon-check" />
+    </p:panel>
+</h:form>
+	
+</h:body>
+</html>

@@ -23,7 +23,6 @@
                 <f:selectItem itemLabel="Selecciona el area" itemValue="" noSelectionOption="true" />
                 <f:selectItems value="#{tutorshipController.subjects}" var="sub" itemLabel="#{sub.idSubject} - #{sub.name}"></f:selectItems>
             </p:selectOneMenu>
-           
             
              <p:outputLabel for="datetime" value="Datetime:" />
       	     <p:calendar id="datetime" value="#{tutorshipController.date}" pattern="MM/dd/yyyy HH:mm:ss" />
