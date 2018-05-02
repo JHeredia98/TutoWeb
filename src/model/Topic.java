@@ -15,7 +15,7 @@ public class Topic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idTopic;
+	private int idTopic;
 
 	private String complexity;
 
@@ -31,21 +31,12 @@ public class Topic implements Serializable {
 
 	public Topic() {
 	}
-	
-	public Topic(String idTopic, String complexity, String name, Subject subject, List<Tutorship> tutorships) {
-		super();
-		this.idTopic = idTopic;
-		this.complexity = complexity;
-		this.name = name;
-		this.subject = subject;
-		this.tutorships = tutorships;
-	}
 
-	public String getIdTopic() {
+	public int getIdTopic() {
 		return this.idTopic;
 	}
 
-	public void setIdTopic(String idTopic) {
+	public void setIdTopic(int idTopic) {
 		this.idTopic = idTopic;
 	}
 

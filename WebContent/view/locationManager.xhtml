@@ -43,7 +43,7 @@
  
         <p:messages id="msgs" />
  		<p:outputLabel for="ubicacion" value="Ubicacion: " />
-        <p:selectOneMenu id="ubicacion" value="Ubicacion" editable="true">
+        <p:selectOneMenu id="ubicacion" value="Ubicacion" editable="true" onchange="#{locationController.}">
             <f:selectItem itemLabel="Select One" itemValue="" />
             <f:selectItems value="#{locationController.locations}" var="sub" itemLabel="#{sub.longitude} , #{sub.latitude}" />
         </p:selectOneMenu>

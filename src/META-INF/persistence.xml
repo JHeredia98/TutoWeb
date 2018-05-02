@@ -2,7 +2,7 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="Tuto" transaction-type="RESOURCE_LOCAL">
 		<class>model.Career</class>
-		<class>model.Cost</class>
+		<class>model.Firebase</class>
 		<class>model.Location</class>
 		<class>model.LocationHasUser</class>
 		<class>model.Status</class>
@@ -11,6 +11,7 @@
 		<class>model.Topic</class>
 		<class>model.Tutorship</class>
 		<class>model.User</class>
+		<class>model.UserHasCareer</class>
 		<class>model.UserType</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

@@ -16,7 +16,7 @@ public class SubjectType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idType;
+	private int idType;
 
 	private String name;
 
@@ -30,20 +30,12 @@ public class SubjectType implements Serializable {
 
 	public SubjectType() {
 	}
-	
-	public SubjectType(String idType, String name, List<Subject> subjects, Career career) {
-		super();
-		this.idType = idType;
-		this.name = name;
-		this.subjects = subjects;
-		this.career = career;
-	}
 
-	public String getIdType() {
+	public int getIdType() {
 		return this.idType;
 	}
 
-	public void setIdType(String idType) {
+	public void setIdType(int idType) {
 		this.idType = idType;
 	}
 

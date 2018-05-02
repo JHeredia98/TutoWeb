@@ -15,7 +15,7 @@ public class Subject implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idSubject;
+	private int idSubject;
 
 	private String name;
 
@@ -30,20 +30,12 @@ public class Subject implements Serializable {
 
 	public Subject() {
 	}
-	
-	public Subject(String idSubject, String name, SubjectType subjectType, List<Topic> topics) {
-		super();
-		this.idSubject = idSubject;
-		this.name = name;
-		this.subjectType = subjectType;
-		this.topics = topics;
-	}
 
-	public String getIdSubject() {
+	public int getIdSubject() {
 		return this.idSubject;
 	}
 
-	public void setIdSubject(String idSubject) {
+	public void setIdSubject(int idSubject) {
 		this.idSubject = idSubject;
 	}
 

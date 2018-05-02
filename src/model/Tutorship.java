@@ -15,10 +15,18 @@ public class Tutorship implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idTutorship;
+	private int idTutorship;
+
+	private double cost;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
+
+	private String genero;
+
+	private String latitude;
+
+	private String longitude;
 
 	private String motive;
 
@@ -27,22 +35,9 @@ public class Tutorship implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timeStamp;
 
-	//bi-directional many-to-one association to Cost
-	@ManyToOne
-	private Cost cost;
-
-	//bi-directional many-to-one association to Location
-	@ManyToOne
-	private Location location;
-
 	//bi-directional many-to-one association to Status
 	@ManyToOne
 	private Status status;
-
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="User_idUser")
-	private User user1;
 
 	//bi-directional many-to-one association to Topic
 	@ManyToOne
@@ -50,35 +45,31 @@ public class Tutorship implements Serializable {
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
+	@JoinColumn(name="User_idUser")
+	private User user1;
+
+	//bi-directional many-to-one association to User
+	@ManyToOne
 	@JoinColumn(name="Tuto_TutoId")
 	private User user2;
 
 	public Tutorship() {
-		
-	}
-	
-	public Tutorship(String idTutorship, Date date, String motive, int rating, Date timeStamp, Cost cost,
-			Location location, Status status, User user1, Topic topic, User user2) {
-		super();
-		this.idTutorship = idTutorship;
-		this.date = date;
-		this.motive = motive;
-		this.rating = rating;
-		this.timeStamp = timeStamp;
-		this.cost = cost;
-		this.location = location;
-		this.status = status;
-		this.user1 = user1;
-		this.topic = topic;
-		this.user2 = user2;
 	}
 
-	public String getIdTutorship() {
+	public int getIdTutorship() {
 		return this.idTutorship;
 	}
 
-	public void setIdTutorship(String idTutorship) {
+	public void setIdTutorship(int idTutorship) {
 		this.idTutorship = idTutorship;
+	}
+
+	public double getCost() {
+		return this.cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
 	}
 
 	public Date getDate() {
@@ -87,6 +78,30 @@ public class Tutorship implements Serializable {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getGenero() {
+		return this.genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getLatitude() {
+		return this.latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public String getMotive() {
@@ -113,22 +128,6 @@ public class Tutorship implements Serializable {
 		this.timeStamp = timeStamp;
 	}
 
-	public Cost getCost() {
-		return this.cost;
-	}
-
-	public void setCost(Cost cost) {
-		this.cost = cost;
-	}
-
-	public Location getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(Location location) {
-		this.location = location;
-	}
-
 	public Status getStatus() {
 		return this.status;
 	}
@@ -137,20 +136,20 @@ public class Tutorship implements Serializable {
 		this.status = status;
 	}
 
-	public User getUser1() {
-		return this.user1;
-	}
-
-	public void setUser1(User user1) {
-		this.user1 = user1;
-	}
-
 	public Topic getTopic() {
 		return this.topic;
 	}
 
 	public void setTopic(Topic topic) {
 		this.topic = topic;
+	}
+
+	public User getUser1() {
+		return this.user1;
+	}
+
+	public void setUser1(User user1) {
+		this.user1 = user1;
 	}
 
 	public User getUser2() {

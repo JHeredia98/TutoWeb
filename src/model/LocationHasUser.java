@@ -15,7 +15,7 @@ public class LocationHasUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idLocation_has_user;
+	private int idLocation_has_user;
 
 	//bi-directional many-to-one association to Location
 	@ManyToOne
@@ -27,19 +27,12 @@ public class LocationHasUser implements Serializable {
 
 	public LocationHasUser() {
 	}
-	
-	public LocationHasUser(String idLocation_has_user, Location location, User user) {
-		super();
-		this.idLocation_has_user = idLocation_has_user;
-		this.location = location;
-		this.user = user;
-	}
 
-	public String getIdLocation_has_user() {
+	public int getIdLocation_has_user() {
 		return this.idLocation_has_user;
 	}
 
-	public void setIdLocation_has_user(String idLocation_has_user) {
+	public void setIdLocation_has_user(int idLocation_has_user) {
 		this.idLocation_has_user = idLocation_has_user;
 	}
 

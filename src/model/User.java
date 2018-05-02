@@ -15,7 +15,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idUser;
+	private int idUser;
 
 	private String email;
 
@@ -43,43 +43,27 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="user2")
 	private List<Tutorship> tutorships2;
 
-	//bi-directional many-to-one association to Career
+	//bi-directional many-to-one association to Firebase
 	@ManyToOne
-	private Career career;
+	private Firebase firebase;
 
 	//bi-directional many-to-one association to UserType
 	@ManyToOne
 	@JoinColumn(name="User_Type_idUser_Type")
 	private UserType userType;
 
+	//bi-directional many-to-one association to UserHasCareer
+	@OneToMany(mappedBy="user")
+	private List<UserHasCareer> userHasCareers;
+
 	public User() {
 	}
-	
-	public User(String idUser, String email, String lastName, String name, String password,
-			String userLiveLocationLatitude, String userLiveLocationLongitude, String username,
-			List<LocationHasUser> locationHasUsers, List<Tutorship> tutorships1, List<Tutorship> tutorships2,
-			Career career, UserType userType) {
-		super();
-		this.idUser = idUser;
-		this.email = email;
-		this.lastName = lastName;
-		this.name = name;
-		this.password = password;
-		this.userLiveLocationLatitude = userLiveLocationLatitude;
-		this.userLiveLocationLongitude = userLiveLocationLongitude;
-		this.username = username;
-		this.locationHasUsers = locationHasUsers;
-		this.tutorships1 = tutorships1;
-		this.tutorships2 = tutorships2;
-		this.career = career;
-		this.userType = userType;
-	}
 
-	public String getIdUser() {
+	public int getIdUser() {
 		return this.idUser;
 	}
 
-	public void setIdUser(String idUser) {
+	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
 
@@ -205,12 +189,12 @@ public class User implements Serializable {
 		return tutorships2;
 	}
 
-	public Career getCareer() {
-		return this.career;
+	public Firebase getFirebase() {
+		return this.firebase;
 	}
 
-	public void setCareer(Career career) {
-		this.career = career;
+	public void setFirebase(Firebase firebase) {
+		this.firebase = firebase;
 	}
 
 	public UserType getUserType() {
@@ -219,6 +203,28 @@ public class User implements Serializable {
 
 	public void setUserType(UserType userType) {
 		this.userType = userType;
+	}
+
+	public List<UserHasCareer> getUserHasCareers() {
+		return this.userHasCareers;
+	}
+
+	public void setUserHasCareers(List<UserHasCareer> userHasCareers) {
+		this.userHasCareers = userHasCareers;
+	}
+
+	public UserHasCareer addUserHasCareer(UserHasCareer userHasCareer) {
+		getUserHasCareers().add(userHasCareer);
+		userHasCareer.setUser(this);
+
+		return userHasCareer;
+	}
+
+	public UserHasCareer removeUserHasCareer(UserHasCareer userHasCareer) {
+		getUserHasCareers().remove(userHasCareer);
+		userHasCareer.setUser(null);
+
+		return userHasCareer;
 	}
 
 }

@@ -48,6 +48,10 @@ public class LocationController {
 		}
 	}
 	
+	public void seleccionarLocation(Location location) {
+		this.location = location;
+	}
+	
 	public void eliminarLocation() {
 		this.location = this.locations.get(0);
 		if (this.location != null) {
@@ -66,7 +70,7 @@ public class LocationController {
 		
 	}
 	//Metodo de ejemplo.
-	public void modificarLocation(Location location) {
+	public void modificarLocation() {
 		try {
 			this.em.getTransaction().begin();
 			this.em.merge(location);

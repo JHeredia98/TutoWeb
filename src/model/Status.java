@@ -15,7 +15,7 @@ public class Status implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idStatus;
+	private int idStatus;
 
 	private String description;
 
@@ -25,19 +25,12 @@ public class Status implements Serializable {
 
 	public Status() {
 	}
-	
-	public Status(String idStatus, String description, List<Tutorship> tutorships) {
-		super();
-		this.idStatus = idStatus;
-		this.description = description;
-		this.tutorships = tutorships;
-	}
 
-	public String getIdStatus() {
+	public int getIdStatus() {
 		return this.idStatus;
 	}
 
-	public void setIdStatus(String idStatus) {
+	public void setIdStatus(int idStatus) {
 		this.idStatus = idStatus;
 	}
 

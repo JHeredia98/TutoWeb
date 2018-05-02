@@ -15,7 +15,7 @@ public class Career implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idCareer;
+	private int idCareer;
 
 	private String level;
 
@@ -25,27 +25,18 @@ public class Career implements Serializable {
 	@OneToMany(mappedBy="career")
 	private List<SubjectType> subjectTypes;
 
-	//bi-directional many-to-one association to User
+	//bi-directional many-to-one association to UserHasCareer
 	@OneToMany(mappedBy="career")
-	private List<User> users;
+	private List<UserHasCareer> userHasCareers;
 
 	public Career() {
 	}
-	
-	public Career(String idCareer, String level, String name, List<SubjectType> subjectTypes, List<User> users) {
-		super();
-		this.idCareer = idCareer;
-		this.level = level;
-		this.name = name;
-		this.subjectTypes = subjectTypes;
-		this.users = users;
-	}
 
-	public String getIdCareer() {
+	public int getIdCareer() {
 		return this.idCareer;
 	}
 
-	public void setIdCareer(String idCareer) {
+	public void setIdCareer(int idCareer) {
 		this.idCareer = idCareer;
 	}
 
@@ -87,26 +78,26 @@ public class Career implements Serializable {
 		return subjectType;
 	}
 
-	public List<User> getUsers() {
-		return this.users;
+	public List<UserHasCareer> getUserHasCareers() {
+		return this.userHasCareers;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUserHasCareers(List<UserHasCareer> userHasCareers) {
+		this.userHasCareers = userHasCareers;
 	}
 
-	public User addUser(User user) {
-		getUsers().add(user);
-		user.setCareer(this);
+	public UserHasCareer addUserHasCareer(UserHasCareer userHasCareer) {
+		getUserHasCareers().add(userHasCareer);
+		userHasCareer.setCareer(this);
 
-		return user;
+		return userHasCareer;
 	}
 
-	public User removeUser(User user) {
-		getUsers().remove(user);
-		user.setCareer(null);
+	public UserHasCareer removeUserHasCareer(UserHasCareer userHasCareer) {
+		getUserHasCareers().remove(userHasCareer);
+		userHasCareer.setCareer(null);
 
-		return user;
+		return userHasCareer;
 	}
 
 }

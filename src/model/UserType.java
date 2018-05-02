@@ -16,7 +16,9 @@ public class UserType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idUser_Type;
+	private int idUser_Type;
+
+	private String description;
 
 	private byte type;
 
@@ -26,20 +28,21 @@ public class UserType implements Serializable {
 
 	public UserType() {
 	}
-	
-	public UserType(String idUser_Type, byte type, List<User> users) {
-		super();
-		this.idUser_Type = idUser_Type;
-		this.type = type;
-		this.users = users;
-	}
 
-	public String getIdUser_Type() {
+	public int getIdUser_Type() {
 		return this.idUser_Type;
 	}
 
-	public void setIdUser_Type(String idUser_Type) {
+	public void setIdUser_Type(int idUser_Type) {
 		this.idUser_Type = idUser_Type;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public byte getType() {

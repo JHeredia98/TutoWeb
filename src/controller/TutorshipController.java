@@ -9,15 +9,21 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import model.Subject;
+import model.SubjectType;
+import model.Topic;
 
 public class TutorshipController {
 
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	private List<Subject> subjects;
-	private Subject subject;
 	private String palabraClave;
 	private Date date;
+	
+	private SubjectType subjectType;
+	private Subject subject;
+	private Topic topic;
+	
 
 	// Constructor
 	public TutorshipController() {
@@ -34,6 +40,8 @@ public class TutorshipController {
 		List<Subject> categorias = query.getResultList();
 		return categorias;
 	}
+	
+	
 
 	// Metodos Publicos
 	public void crearCategoria(Subject categoria) {
