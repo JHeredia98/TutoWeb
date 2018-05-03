@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+
+	<p:panelGrid columns="2" style="width:80%;margin:0px auto;">
+
+		
+
+			<p:outputLabel value="Nombre:" for="usernametext" />
+			<p:inputText id="usernametext" />
+
+			<p:outputLabel value="Apellido:" for="apellidotext" />
+			<p:inputText id="apellidotext" />
+
+			<p:outputLabel value="Correo:" for="correotext" />
+			<p:inputText id="correotext" />
+
+			<p:outputLabel value="Telefono:" for="telefonotext" />
+			<p:inputText id="telefonotext" />
+
+			<h:outputLabel value="Contraseña: " for="nonFeedback" />
+			<p:password id="nonFeedback" value="" />
+
+			<h:outputLabel value="Valida Contraseña: " for="nonFeedback2" />
+			<p:password id="nonFeedback2" value="" />
+
+			<p:outputLabel for="gender" value="Genero: " />
+			<p:selectOneMenu id="gender" value="">
+				<f:selectItem itemLabel="Masculino" itemValue="M" />
+				<f:selectItem itemLabel="Femenino" itemValue="F" />
+				<f:selectItem itemLabel="Otro" itemValue="O" />
+			</p:selectOneMenu>
+
+			<p:outputLabel value="Carrera:" for="acSimple" />
+			<p:autoComplete id="acSimple" value="#{autoCompleteView.txt1}"
+				completeMethod="#{autoCompleteView.completeText}" />
+
+
+
+
+
+	</p:panelGrid>
+
+
+</h:body>
+
+
+
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<h:title>Login </h:title>
+
+
+</h:head>
+
+<h:body>
+
+	<p:panelGrid columns="2" style="width:80%;margin:0px auto; text-align: center">
+		<p:outputLabel value="Correo:" for="correotext" />
+		<p:inputText id="correotext" />
+
+
+		<h:outputLabel value="Contraseña: " for="nonFeedback" />
+		<p:password id="nonFeedback" value="" />
+
+
+
+	</p:panelGrid>
+
+	<p:panelGrid columns="1" style="width:80%;margin:0px auto; text-align: center">
+		<p:commandButton value="Iniciar Sesion" id="withIcon" 
+			actionListener="#{buttonView.buttonAction}" style="width:80%;margin:0px auto;"/>
+		<p:commandButton value="Registrarse" id="withIcon2"
+			actionListener="#{buttonView.buttonAction}" style="width:80%;margin:0px auto;"/>
+			
+			<h:outputLabel value="Olvidaste la contraseña?" />
+
+	</p:panelGrid>
+
+
+
+
+
+	
+</h:body>
+
+</html>
